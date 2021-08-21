@@ -1,6 +1,4 @@
-# Static Content challenge - mid-level
-
-**NB: Please do not fork this repository, to avoid your solution being visible from this repository's GitHub page. Please clone this repository and submit your solution as a separate repository.**
+# Task
 
 Business Scenario: Acme Co's marketing department want a simple content management system and you've been tasked with building the MVP.
 
@@ -14,9 +12,26 @@ This repository contains a `template.html` template file and a sample `content` 
 
 Your application may make use of open-source code libraries. It is entirely up to you how the application performs the challenge.
 
+## Design decisions
+
+Setup server with node and express
+Use middleware in express to catch all routes and then parse url to get file path.
+Use readFileSync() inside try/catch statements to open required file, if performance on the server was an issue this could be done asynchronously 
+If file is found use 'markdown-it', an open source library to render html from markdown
+Use handlebars template engine to insert rendered markdown content
+For this template.html will be changed to template.hbs and {{content}} will be changed to {{{content}}} to insert non escaped html
+
+## Dependencies
+
+express
+express-handlebars
+markdown-it
+jest
+supertest
+
 ## Testing
 
-The application should be shipped with three tests:
+The application has three tests:
 
 * one that verifies that requests to valid URLs return a 200 HTTP status code
 * one that verifies that requests to valid URLs return a body that contains the HTML generated from the relevant `index.md` markdown file
