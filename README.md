@@ -14,12 +14,15 @@ Your application may make use of open-source code libraries. It is entirely up t
 
 ## Design decisions
 
-Setup server with node and express
+Setup server with node and express.
+
 Use middleware in express to catch all routes and then parse url to get file path.
-Use readFileSync() inside try/catch statements to open required file, if performance on the server was an issue this could be done asynchronously 
+
+Use readFileSync() inside try/catch statements to open required file, if performance on the server was an issue this could be done asynchronously. 
+
 If file is found use 'markdown-it', an open source library to render html from markdown
-Use handlebars template engine to insert rendered markdown content
-For this template.html will be changed to template.hbs and {{content}} will be changed to {{{content}}} to insert non escaped html
+
+Use handlebars template engine to insert rendered markdown content. For this template.html will be changed to template.hbs and {{content}} will be changed to {{{content}}} to insert non escaped html
 
 ## Dependencies
 
@@ -41,6 +44,9 @@ The application has three tests:
 ## Deployment
 
 App deployed to heroku https://stat-file-serv.herokuapp.com/
+
 Valid routes:
+
 https://stat-file-serv.herokuapp.com/about-page/
+
 https://stat-file-serv.herokuapp.com/blog/june/company-update
