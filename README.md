@@ -38,9 +38,9 @@ The application has three tests:
 * one that verifies that requests to URLs that do not match content folders return a 404 HTTP status code
 * NB: the tests should not depend on the existing sub-folders in the `content` folder, so the tests do not break as the content changes
 
-## Bonus credit
+## Deployment
 
-In this MVP sprint, there are two nice-to-have tickets:
-
-* The generated HTML page should be styled in a pleasing way
-* The MVP's GitHub repository should be configured for hosting on a cloud hosting service, and include a link to a live deployment
+App deployed to heroku https://stat-file-serv.herokuapp.com/
+Valid routes:
+https://stat-file-serv.herokuapp.com/about-page/
+https://stat-file-serv.herokuapp.com/blog/june/company-update
