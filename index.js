@@ -30,7 +30,7 @@ app.use('/', (req, res) => {
     const path = url.parse(req.url).path
     try {
         // try to fetch file form path
-        const data = fs.readFileSync("./content" + path + "index.md", 'utf8')
+        const data = fs.readFileSync("./content" + path + "/index.md", 'utf8')
         // render as html from markdown
         const rendered = md.render(data);
         // set status
