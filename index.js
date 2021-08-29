@@ -1,3 +1,4 @@
+const path = require('path');
 // Using 'expressjs' to create node server
 const express = require('express');
 //Using 'handlebars' template engine
@@ -23,6 +24,8 @@ app.engine('hbs', handlebars({
     // set default layout
     defaultLayout: 'template'
 }));
+
+app.use(express.static(path.join(__dirname, 'public')))
 
 //define middleware to parse and render each file path
 app.use('/', (req, res) => {
